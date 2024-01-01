@@ -3,19 +3,15 @@
 ## Table of Contents
  * [Project Motivation](#project-motivation)
  * [File Descriptions](#file-descriptions)
+ * [Objective](#objective)
  * [Components](#components)
- * [Instructions of How to Interact With Project](#instructions-of-how-to-interact-with-project)
- * [Licensing, Authors, Acknowledgements, etc.](#licensing-authors-acknowledgements-etc)
+ * [Instructions on How to Interact With the Project](#instructions-of-how-to-interact-with-project)
  
-# Project Motivation
-# Building an ETL and Machine Learning Pipeline for Udacity Data Scientist ND Project-2.
-# Utilizing Plotly, Flask, Pandas, Scikit-learn, NLTK, SQLite, and more.
+### Project Motivation
+Building an ETL and Machine Learning Pipeline for Udacity Data Scientist ND Project-2. Utilizing Plotly, Flask, Pandas, Scikit-learn, NLTK, SQLite, and more.
 
-# Objective:
-# Analyzing disaster data from Figure Eight to construct a model for an API classifying messages
-# sent during disaster events. The pipeline categorizes real messages for appropriate routing to
-# disaster relief agencies. The project also includes a web app allowing emergency workers to input
-# new messages and receive classification results across various categories, along with visualizations.
+### Objective:
+Analyzing disaster data from Figure Eight to construct a model for an API classifying messages sent during disaster events. The pipeline categorizes real messages for appropriate routing to disaster relief agencies. The project also includes a web app allowing emergency workers to input new messages and receive classification results across various categories, along with visualizations.
 
 ### File Descriptions
 app    
@@ -53,33 +49,30 @@ There are three components I completed for this project.
  - Cleans the data(TRANSFORM)
  - Stores the cleaned data in SQLite database (LOAD)
  
-If you're interested in understanding how the Pipeline is prepared, please refer to the jupyter notebook named `ETL Pipeline Preparation`
+If you're interested in understanding how the Pipeline is prepared, please refer to the Jupyter notebook named `ETL Pipeline Preparation`
 
 #### 2. ML Pipeline
 `train_classifier.py`: a machine learning pipeline
 
  - Loads data from the SQLite database (ResponseDisaster.db)
  - Splits the data into training and testing sets.
- - Processes text through a text processing pipeline 
+ - Processes text through a text-processing pipeline 
  - Creates a machine learning pipeline
  - Prints classification report
  - Saves the final model as a pickle file
  
-If you're interested in understanding how the Pipeline is prepared, please refer to the jupyter notebook named `ML Pipeline Preparation`
+If you're interested in understanding how the Pipeline is prepared, please refer to the Jupyter notebook named `ML Pipeline Preparation`
 
 #### 3. Flask Web App
 The project includes a web app where an emergency worker can input a new message and get classification results in several categories. The web app will also display visualizations of the data. The outputs are shown below:
 
-![app3](https://user-images.githubusercontent.com/54407746/98725077-9826b800-238c-11eb-828f-864dce8cbd9b.JPG)
+![image](https://github.com/FahadAlAraik/Udacity-DataScienceND-Project-Two/assets/51764194/8779ad1c-ba44-4d6f-b936-bacfa0acae73)
+
+![image](https://github.com/FahadAlAraik/Udacity-DataScienceND-Project-Two/assets/51764194/f8fe9ea7-7c44-48d0-a9b6-ed74a5fd4051)
 
 
-![app1](https://user-images.githubusercontent.com/54407746/98724735-159df880-238c-11eb-8338-bc4b4e0b1c39.JPG)
 
-
-![app2](https://user-images.githubusercontent.com/54407746/98724932-5bf35780-238c-11eb-8a93-ebb09ab2d510.JPG)
-
-
-### Instructions of How to Interact With Project:
+### Instructions on How to Interact With the Project:
 1. Run the following commands in the project's root directory to set up your database and model.
 
     - To run ETL pipeline that cleans data and stores in database
