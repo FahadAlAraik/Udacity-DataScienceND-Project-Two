@@ -39,12 +39,18 @@ def clean_data(df):
     categories.columns = category_colnames
     
     # convert category values to just numbers 0 or 1.
+    # Loop through each column in the DataFrame
     for column in categories:
-    # set each value to be the last character of the string
+    # Set each value to be the last character of the string
         categories[column] = categories[column].str.split('-').str[-1]
-    
-    # convert column from string to numeric
-    categories[column] = categories[column].astype(int)
+        
+        # Convert column from string to numeric
+        categories[column] = pd.to_numeric(categories[column], errors='coerce')  # Convert non-numeric values to NaN
+        
+        # Replace values other than 0 and 1 with None
+        categories[column] = categories[column].apply(lambda x: x if x in [0, 1] else None)
+        
+
     
     # drop the original categories column from `df`
     df = df.drop(columns='categories')
@@ -52,10 +58,13 @@ def clean_data(df):
     # concatenate the original dataframe with the new `categories` dataframe
     df = pd.concat([df, categories], axis=1)
 
-    df = df[df['related'] != 2]
     
     # drop duplicates
     df = df.drop_duplicates()
+    # drop nans because they are the values of 2
+    df = df.dropna()
+    # make sure 0 and 1 are ints
+    df.iloc[:,4:]=df.iloc[:,4:].astype(int)
     
     
     return df
